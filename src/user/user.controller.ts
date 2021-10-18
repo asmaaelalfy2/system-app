@@ -22,13 +22,13 @@ export class UserController {
 
 
 
-    async update(@Param('id') id, @Body() entityData: User): Promise<any> {
+    async update(@Param('id') id, @Body() entityData: User) {
         entityData.id = Number(id);
         return this.userService.updateUser(entityData);
     }
 
     @Delete('/delete/:id')
-    async delete(@Param('id') id): Promise<any> {
+    async delete(@Param('id') id) {
         return this.userService.deleteUser(id);
     }
 
